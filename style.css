@@ -1,0 +1,185 @@
+*, 
+*::before, 
+*::after{
+  box-sizing:border-box;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+html{
+  color-scheme: dark;
+}
+
+
+body{
+  margin: 0;
+  background-color:hsla(229, 41%, 25%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  font-family: 'outfit',sans-serif;
+  font-size: 400;
+  font-weight: 300;
+  line-height: 1.5;
+
+}
+
+.visually-hidden{
+  clip: rect(0 0 0 0 );
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.main-grid{
+  display: grid;
+  grid-template-columns: clamp(5rem, 10vw, 15rem) 1fr;
+  gap: 5vw;
+  grid-auto-flow: dense;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main{
+  padding-block:2rem ;
+  grid-column: 2;
+  width: calc(100vw - 15rem - 5vw);
+}
+
+aside{
+  grid-column: 1;
+  align-self: stretch;
+  display: flex;
+  justify-content: end;
+}
+
+.eyebrow{
+  color:hsla(229, 41%, 25%, 1);
+  font-size: 300;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.page-title{
+  font-size: 700;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+
+.intro{
+  font-size: 500;
+  max-width: 45ch;
+}
+
+.job{
+  width:28rem ;
+  gap: 1rem;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  background: hsla(229, 47%, 17%, 1);
+  padding-top: 3rem;
+  
+}
+
+.job * {
+  margin: 0;
+}
+
+.job-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.year{
+  color: hsla(145, 63%, 49%);
+  font-weight: 700;
+  letter-spacing: 2px;
+
+}
+
+.role{
+  font-size: 400;
+  line-height: 1.2;
+}
+
+.Company{
+  color: hsla(0, 0%, 100%, 1);
+  font-size: 300;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.job-experience{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 1rem;
+  overflow-x: auto;
+  position: relative;
+  padding-block :2rem;
+}
+
+.job-experience::after{
+  content: '';
+  width: 100px;
+  background: transparent;
+}
+
+.job-experience::-webkit-scrollbar{
+  height: 0.75rem;
+}
+.job-experience::-webkit-scrollbar-track{
+  background-color: hsla(229, 47%, 17%, 1);
+  border-radius: 100vw;
+}
+.job-experience::-webkit-scrollbar-thumb{
+  background-color: hsla(145, 63%, 49%);
+  border-radius: 100vw;
+}
+
+.icon-list{
+  height: 100%;
+  border-left: 1px solid rgb(107, 113, 143);
+  padding: 0;
+  margin: 0;
+  align-content: center;
+  list-style: none;
+  display: grid;
+  gap: 3rem;
+}
+
+.icon-list > li{
+  position: relative;
+  padding-left: 2rem;
+}
+
+.icon-list > li::after{
+  position: absolute;
+  content: '';
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  outline: 0.5rem solid hsla(229, 36%, 39%, 1);
+  left: -.25rem;
+  top: 0.5rem;
+  background:hsla(0, 0%, 100%, 1);
+  
+}
+
+.job:first-child::before{
+  content: 'Current role';
+  position: absolute;
+  top: 0rem;
+  color: hsla(145, 63%, 49%);
+  left: 0;
+}
